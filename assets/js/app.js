@@ -26,62 +26,116 @@
           $('.tab-pane').length && $($('.cat-tag-menu li a')[0]).tab('show');
       }
     }
-    /**
-     * 
-     * */
     function particlesFunc(){
-    	/* default dom id (particles-js) */
-    	//particlesJS();
-
-    	/* config dom id */
-    	//particlesJS('dom-id');
-
-    	/* config dom id (optional) + config particles params */
-    	particlesJS('particles-js', {
-    	  particles: {
-    	    color: '#fff',
-    	    shape: 'circle', // "circle", "edge" or "triangle"
-    	    opacity: 1,
-    	    size: 4,
-    	    size_random: true,
-    	    nb: 150,
-    	    line_linked: {
-    	      enable_auto: true,
-    	      distance: 100,
-    	      color: '#fff',
-    	      opacity: 1,
-    	      width: 1,
-    	      condensed_mode: {
-    	        enable: false,
-    	        rotateX: 600,
-    	        rotateY: 600
-    	      }
+    	particlesJS("particles-js", {
+    	    "particles": {
+    	        "number": {
+    	            "value": 160,
+    	            "density": {
+    	                "enable": true,
+    	                "value_area": 800
+    	            }
+    	        },
+    	        "color": {
+    	            "value": "#ffffff"
+    	        },
+    	        "shape": {
+    	            "type": "circle",
+    	            "stroke": {
+    	                "width": 0,
+    	                "color": "#000000"
+    	            },
+    	            "polygon": {
+    	                "nb_sides": 5
+    	            },
+    	            "image": {
+    	                "src": "img/github.svg",
+    	                "width": 100,
+    	                "height": 100
+    	            }
+    	        },
+    	        "opacity": {
+    	            "value": 1,
+    	            "random": true,
+    	            "anim": {
+    	                "enable": true,
+    	                "speed": 1,
+    	                "opacity_min": 0,
+    	                "sync": false
+    	            }
+    	        },
+    	        "size": {
+    	            "value": 3,
+    	            "random": true,
+    	            "anim": {
+    	                "enable": false,
+    	                "speed": 4,
+    	                "size_min": 0.3,
+    	                "sync": false
+    	            }
+    	        },
+    	        "line_linked": {
+    	            "enable": true,
+    	            "distance": 150,
+    	            "color": "#ffffff",
+    	            "opacity": 0.4,
+    	            "width": 1
+    	        },
+    	        "move": {
+    	            "enable": true,
+    	            "speed": 1,
+    	            "direction": "none",
+    	            "random": true,
+    	            "straight": false,
+    	            "out_mode": "out",
+    	            "bounce": false,
+    	            "attract": {
+    	                "enable": false,
+    	                "rotateX": 600,
+    	                "rotateY": 600
+    	            }
+    	        }
     	    },
-    	    anim: {
-    	      enable: true,
-    	      speed: 1
-    	    }
-    	  },
-    	  interactivity: {
-    	    enable: true,
-    	    mouse: {
-    	      distance: 300
+    	    "interactivity": {
+    	        "detect_on": "canvas",
+    	        "events": {
+    	            "onhover": {
+    	                "enable": true,
+    	                "mode": "bubble"
+    	            },
+    	            "onclick": {
+    	                "enable": true,
+    	                "mode": "repulse"
+    	            },
+    	            "resize": true
+    	        },
+    	        "modes": {
+    	            "grab": {
+    	                "distance": 400,
+    	                "line_linked": {
+    	                    "opacity": 1
+    	                }
+    	            },
+    	            "bubble": {
+    	                "distance": 250,
+    	                "size": 0,
+    	                "duration": 2,
+    	                "opacity": 0,
+    	                "speed": 3
+    	            },
+    	            "repulse": {
+    	                "distance": 400,
+    	                "duration": 0.4
+    	            },
+    	            "push": {
+    	                "particles_nb": 4
+    	            },
+    	            "remove": {
+    	                "particles_nb": 2
+    	            }
+    	        }
     	    },
-    	    detect_on: 'canvas', // "canvas" or "window"
-    	    mode: 'grab',
-    	    line_linked: {
-    	      opacity: .5
-    	    },
-    	    events: {
-    	      onclick: {
-    	        enable: true,
-    	        mode: 'push', // "push" or "remove"
-    	        nb: 4
-    	      }
-    	    }
-    	  },
-    	  /* Retina Display Support */
-    	  retina_detect: true
+    	    "retina_detect": true
     	});
     }
     // watch hash change and activate relevant tab
