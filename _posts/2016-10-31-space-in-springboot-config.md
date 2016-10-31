@@ -26,6 +26,9 @@ class path resource [log4j2.xml ] cannot be resolved to
 ```
 URL because it does not exist at org.springframework.util.ResourceUtils.getURL(ResourceUtils.java:138)
 ```
+  
+  
+
 delete the space behind the 'log4j2.xml',it works as a jar.
 
 is ok?
