@@ -17,7 +17,8 @@ in the application.properties
 logging.config=classpath:log4j2.xml 
 ```  
 
-There is a space behind the 'log4j2.xml',the configuration can work in the eclipse ,but run the configuration as a jar (**java -jar**) it do not work!
+There is a space behind the 'log4j2.xml',the configuration can work in the eclipse ,but run the configuration as a jar (**java -jar**) it do not work!  
+
 ```
 Logging system failed to initialize using configuration from 'classpath:log4j2.xml '
 ```
