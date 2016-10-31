@@ -9,9 +9,8 @@ comments: true
 The space in the configuration file will result in different running results(eclipse and jar).
 
 I find a case:
-```
-<version>1.4.1.RELEASE</version>
-```
+version.1.4.1.RELEASE.version
+
 in the application.properties
 ``` 
 logging.config=classpath:log4j2.xml 
