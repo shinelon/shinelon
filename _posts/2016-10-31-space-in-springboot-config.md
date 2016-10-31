@@ -21,12 +21,8 @@ There is a space behind the 'log4j2.xml',the configuration can work in the eclip
 
 ```
 Logging system failed to initialize using configuration from 'classpath:log4j2.xml '
-```
-```
 java.io.FileNotFoundException: 
 class path resource [log4j2.xml ] cannot be resolved to 
-```
-```
 URL because it does not exist at org.springframework.util.ResourceUtils.getURL(ResourceUtils.java:138)
 ```
   
