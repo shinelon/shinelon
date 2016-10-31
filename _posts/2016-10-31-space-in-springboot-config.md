@@ -29,3 +29,7 @@ delete the space behind the 'log4j2.xml',it works as a jar.
 
 is ok?
 
+[Submitted to github issue][1]
+
+
+  [1]: https://github.com/spring-projects/spring-boot/issues/7251
