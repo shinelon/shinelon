@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: No operations allowed after statement closed !
