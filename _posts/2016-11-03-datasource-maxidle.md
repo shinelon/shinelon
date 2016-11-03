@@ -137,8 +137,7 @@ The last packet successfully received from the server was 1,240,559 milliseconds
  * 关键日志信息：`No operations allowed after statement closed`  
  
  * 问题分析：  
-  1  mybatis的statenment缓存时间大于connection的存活时间。  
-  
+  1  mybatis的statenment缓存时间大于connection的存活时间。    
   2 connection超时导致statement关闭。    
   	2.1 数据源连接的相关配置  
   	2.2 mysql连接配置  
