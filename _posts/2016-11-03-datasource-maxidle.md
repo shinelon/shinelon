@@ -139,9 +139,8 @@ The last packet successfully received from the server was 1,240,559 milliseconds
  * 问题分析：  
   1  mybatis的statenment缓存时间大于connection的存活时间。  
   
-  2 connection超时导致statement关闭。  
-  
-  	2.1 数据源连接的相关配置
+  2 connection超时导致statement关闭。    
+  	2.1 数据源连接的相关配置  
   	2.2 mysql连接配置  
   3 mysql默认连接超时时间是8小时，但是问题在短时间内1小时就可以重现，所以我们先来排查缓存和数据源连接
  * 排查
