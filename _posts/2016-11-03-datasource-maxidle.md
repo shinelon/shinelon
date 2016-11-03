@@ -151,7 +151,7 @@ The last packet successfully received from the server was 1,240,559 milliseconds
     说好的mysql默认连接28800秒8小时呢？思维惯性害死人啊。  
     因为c3p0的`maxIdleTime`和`idleConnectionTestPeriod`的时间都大于600实际上是没有生效的。
     将这两个参数设置都小于600秒问题解决。  
- * 总结
+ * 总结  
   数据连接池的设置都依附于数据库本身，排查问题应该先查看数据的配置。
     
     
