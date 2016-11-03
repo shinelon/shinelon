@@ -136,20 +136,16 @@ The last packet successfully received from the server was 1,240,559 milliseconds
   
  * 关键日志信息：`No operations allowed after statement closed`  
  
- * 问题分析：  
-  1  mybatis的statenment缓存时间大于connection的存活时间。    
-  2 connection超时导致statement关闭。    
-  	2.1 数据源连接的相关配置  
-  	2.2 mysql连接配置  
-  3 mysql默认连接超时时间是8小时，但是问题在短时间内1小时就可以重现，所以我们先来排查缓存和数据源连接
- * 排查  
- 1 在mybatis文件中`select`标签中添加`useCache="false"
-`属性关闭mybatis缓存，测试问题没有解决。  
- 2 查询数据源(c3p0)的相关配置：  
-    `max_statements`statements缓存配置0，测试，无效
-    `maxIdleTime` 连接的最大空闲时间1800，测试，无效
-     `idleConnectionTestPeriod`用来配置测试空闲连接的间隔时间1800，测试，无效  
- 3 查询数据库（mysql）相关配置：  
+ * 问题分析：      
+  1 connection超时导致statement关闭。    
+  	1.1 数据源连接的相关配置  
+  	1.2 mysql连接配置  
+  2 mysql默认连接超时时间是8小时，但是问题在短时间内1小时就可以重现，所以我们先来排查缓存和数据源连接
+ * 排查    
+ 1 查询数据源(c3p0)的相关配置：  
+    `maxIdleTime` 连接的最大空闲时间1800，测试，无效。
+     `idleConnectionTestPeriod`用来配置测试空闲连接的间隔时间1800，测试，无效。 
+ 2 查询数据库（mysql）相关配置：  
     `SHOW GLOBAL VARIABLES LIKE 'wait_timeout';` 发现了问题：  
     wait_timeout | 600  
     说好的mysql默认连接28800秒8小时呢？思维惯性害死人啊。  
