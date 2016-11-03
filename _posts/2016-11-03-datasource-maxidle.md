@@ -144,7 +144,7 @@ The last packet successfully received from the server was 1,240,559 milliseconds
  * 排查    
  1 查询数据源(c3p0)的相关配置：  
     `maxIdleTime` 连接的最大空闲时间1800，测试，无效。  
-     `idleConnectionTestPeriod`用来配置测试空闲连接的间隔时间1800，测试，无效。 
+     `idleConnectionTestPeriod`用来配置测试空闲连接的间隔时间1800，测试，无效。   
  2 查询数据库（mysql）相关配置：  
     `SHOW GLOBAL VARIABLES LIKE 'wait_timeout';` 发现了问题：  
     wait_timeout | 600  
