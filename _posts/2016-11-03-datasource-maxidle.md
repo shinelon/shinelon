@@ -1,8 +1,8 @@
 ---
 layout: post
 title: No operations allowed after statement closed !
-categories: [general, setup, demo]
-tags: [demo,setup]
+categories: [general, problem]
+tags: [mysql,c3p0]
 fullview: true
 comments: true
 ---
