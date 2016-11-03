@@ -142,7 +142,7 @@ The last packet successfully received from the server was 1,240,559 milliseconds
   	2.1 数据源连接的相关配置  
   	2.2 mysql连接配置  
   3 mysql默认连接超时时间是8小时，但是问题在短时间内1小时就可以重现，所以我们先来排查缓存和数据源连接
- * 排查
+ * 排查  
  1 在mybatis文件中`select`标签中添加`useCache="false"
 `属性关闭mybatis缓存，测试问题没有解决。
  2 查询数据源(c3p0)的相关配置：  
