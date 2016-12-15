@@ -1,7 +1,7 @@
 ---
 layout: post
 title: spring-boot-starter-parent配置问题
-categories: [general,study]
+categories: [general]
 tags: [IT,JAVA,springboot]
 fullview: true
 comments: true

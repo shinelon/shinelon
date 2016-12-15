@@ -1,7 +1,7 @@
 ---
 layout: post
 title: springboot issue!
-categories: [general,study]
+categories: [general]
 tags: [IT,JAVA,springboot]
 fullview: true
 comments: true

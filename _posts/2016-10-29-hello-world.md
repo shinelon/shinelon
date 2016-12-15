@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Hello World!
-categories: [general, setup, demo]
-tags: [demo,setup]
+categories: [general]
+tags: [demo]
 fullview: true
 comments: true
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: happens-before!
-categories: [general,study]
+categories: [general]
 tags: [IT,JAVA]
 fullview: true
 comments: true

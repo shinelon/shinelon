@@ -1,7 +1,7 @@
 ---
 layout: post
 title: No operations allowed after statement closed !
-categories: [general, problem]
+categories: [general]
 tags: [mysql,c3p0]
 fullview: true
 comments: true
