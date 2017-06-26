@@ -14,16 +14,16 @@ comments: true
 最近在研究接口平台API的token的获取方法，类似微信token，有过期时间需要持久化并更新。
 
 ```java
-		Lock l = new ReentrantLock();
-	    l.lock();
-		try {
-			if (isAccessTokenExpired()) {
-              //update token
-			}
-            // get token
-		} finally {
-			l.unlock();
-		}
+    Lock l = new ReentrantLock();
+    l.lock();
+    try {
+    	if (isAccessTokenExpired()) {
+           //update token
+    	}
+           // get token
+    	} finally {
+    	l.unlock();
+    }
 ```
 
 若全局只有一个token这样获取token，没有问题，但是若全局有tokenA，tokenB等等，则获取tokenA的时候tokenA的时候tokenB需要等待。这个时候我们要细化锁的粒度。
@@ -45,10 +45,10 @@ google 出品必属精品。
 
 #### Striped数据结构
 
-striped的基础数据结构为key-value，以Striped<Lock>为例。value为`ReentrantLock(false)`，key的数据结构分为strong和weak
+striped的基础数据结构为key-value，以Striped<Lock>为例。value为 `ReentrantLock(false)` ，key的数据结构分为strong和weak
 
 - strong的key的数据结构为`Object[]`
-- weak的key的数据结构根据striped的数量分为`ConcurrentMap<Integer, Lock>`和`AtomicReferenceArray<ArrayReference<? extends Lock>>` 且都为若引用
+- weak的key的数据结构根据striped的数量分为`ConcurrentMap<Integer, Lock>`和`AtomicReferenceArray<ArrayReference<? extends Lock>>` 且都为弱引用
 
 #### 锁冲突问题
 
