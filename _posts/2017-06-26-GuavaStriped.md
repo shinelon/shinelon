@@ -26,7 +26,7 @@ comments: true
     }
 ```
 
-若全局只有一个token这样获取token，没有问题，但是若全局有tokenA，tokenB等等，则获取tokenA的时候tokenA的时候tokenB需要等待。这个时候我们要细化锁的粒度。
+若全局只有一个token这样获取token，没有问题，但是若全局有tokenA，tokenB等等，则获取tokenA的时候tokenB需要等待。这个时候我们要细化锁的粒度。
 
 #### Striped注释分析
 
@@ -37,7 +37,7 @@ google 出品必属精品。
 - 细化锁的粒度并允许独立操作。
 - key-value数据结构，通过key获取对应的锁
   - 若key1.equals(key2)则striped.get(key1) == striped.get(key2)
-  - 若!key1.equals(key2)则不保证striped.get(key1) != striped.get(key2)，即key1和key2为同一把锁，暂且叫做锁冲突
+  - 若!key1.equals(key2)则不保证striped.get(key1) != striped.get(key2)，即key1和key2可能为同一把锁，暂且叫做锁冲突
   - stripes数量越少锁冲突概率越大
 - striped分为strong和weak
   - strong为提前初始化、强引用、不可回收
@@ -45,7 +45,7 @@ google 出品必属精品。
 
 #### Striped数据结构
 
-striped的基础数据结构为key-value，以Striped<Lock>为例。value为 `ReentrantLock(false)` ，key的数据结构分为strong和weak
+striped的基础数据结构为key-value，以Striped<Lock>为例。value为`ReentrantLock(false)`,key的数据结构分为strong和weak
 
 - strong的key的数据结构为`Object[]`
 - weak的key的数据结构根据striped的数量分为`ConcurrentMap<Integer, Lock>`和`AtomicReferenceArray<ArrayReference<? extends Lock>>` 且都为弱引用
